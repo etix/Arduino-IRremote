@@ -179,6 +179,7 @@ class IRrecv
 	private:
 		long  decodeHash (decode_results *results) ;
 		int   compare    (unsigned int oldval, unsigned int newval) ;
+        irparams_t irparams;
 
 		//......................................................................
 #		if (DECODE_RC5 || DECODE_RC6)

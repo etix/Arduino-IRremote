@@ -66,7 +66,12 @@ irparams_t;
 // Allow all parts of the code access to the ISR data
 // NB. The data can be changed by the ISR at any time, even mid-function
 // Therefore we declare it as "volatile" to stop the compiler/CPU caching it
-EXTERN  volatile irparams_t  irparams;
+//EXTERN  volatile irparams_t  irparams;
+
+#define IR_PARAMS_MAX 5
+
+extern int irparams_used;
+extern irparams_t *irparamslist[IR_PARAMS_MAX];
 
 //------------------------------------------------------------------------------
 // Defines for blinking the LED

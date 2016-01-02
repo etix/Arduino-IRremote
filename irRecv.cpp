@@ -91,10 +91,12 @@ int  IRrecv::decode (decode_results *results)
 }
 
 //+=============================================================================
-IRrecv::IRrecv (int recvpin)
+IRrecv::IRrecv (int recvpin) : irparams()
 {
 	irparams.recvpin = recvpin;
 	irparams.blinkflag = 0;
+    irparamslist[irparams_used] = &irparams;
+    irparams_used++;
 }
 
 IRrecv::IRrecv (int recvpin, int blinkpin)
